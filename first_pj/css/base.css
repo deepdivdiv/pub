@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+:root {
+	--mColor: #942cc4;
+	--mColor_u: #8728b3;
+	--mColor_d: #942cc4;
+	--basetext: #222222;
+	--subtext: #777777;
+	--sidetext: #919191;
+}
+
+/* placeholder */
+::placeholder {color: #a5a5a5; opacity: 1;} :-ms-placeholder {color: #a5a5a5; opacity: 1;} ::-ms-placeholder {color: #a5a5a5; opacity: 1;}
+
+/* skip navi */
+#skipnav { position: fixed; top: 0; left: 0; right: 0; z-index: 99999; a { display: block;	width: 100%; height: 0; line-height: 23px; color: #fff; background: #2b2b2b;text-align: center;overflow: hidden; &:focus { height: 25px; } } }
+
+
+/* Safari 6.1+ (9.0 is the latest version of Safari at this time) */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {  .safari_only{ color:#000fff; background-color:#cccccc; } }
+/* Safari 9.0+ (iOS Only) */
+@supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) and (not (-moz-appearance:none)) { .safari_only { color:#0000FF; background-color:#CCCCCC; } }
+
