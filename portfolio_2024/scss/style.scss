@@ -927,12 +927,13 @@ body {
                 stroke-dashoffset: 1;
             }
             .svg-txt {
-                max-width: 80rem;
+                width: 90%;
                 margin: 2.5rem 0 2.5rem 0;
                 display: block;
             }
             .m_copy {
                 width: 100%;
+                h2 { display: none; }
                 p {
                     opacity: 0;
                     line-height: 1.4;
@@ -1839,7 +1840,6 @@ body {
     // 1400px
     @media (width <= 1400px) {
         #wrap {
-            .scroll { display: none; }
             article {
                 section {
                     padding: 0;
@@ -1922,11 +1922,7 @@ body {
         #wrap {
             > main {
                 canvas { display: block; }
-                .svg-txt {
-                    max-width: 50rem;
-                    min-width: 20rem;
-                    margin: 2rem auto;
-                }
+
                 img {
                     max-width: 30rem;
                 }
@@ -1939,6 +1935,7 @@ body {
                 }
                 .m_copy { 
                     text-align: center;
+
                     p {
                         font-size: 2rem;
                         justify-content: center;
@@ -2107,14 +2104,11 @@ body {
                 }
             }
             // 메인섹션
-            main {
-                height: auto;
+            > main {
+                height: 100vh;
                 background: $color-main;
-                .svg-txt {
-                    max-width: 50rem;
-                    min-width: 20rem;
-                    margin: 2rem auto;
-                }
+
+                
                 img {
                     max-width: 30rem;
                 }
@@ -2124,9 +2118,33 @@ body {
                     padding: 7rem 4rem 15rem;
                     flex-direction: column;
                 }
-                .m_copy { text-align: center; }
+                .m_copy { 
+                    text-align: center; 
+                    h2 {
+                        display: block;
+                        opacity: 0;
+                        font: {
+                            size: $fz-56;
+                            family: $font-title;
+                            weight: $fw-bold;
+                        }
+                        -webkit-text-stroke: 1px #fff;
+                        color: #fff;
+                        padding: 2rem 0 1rem;
+                        br { display: none; }
+                    }
+                    .svg-txt { display: none; }
+                }
+                .scroll {
+                    bottom: 13vw;
+                    padding: 1.5rem;
+                    z-index: 6;
+                    background: #fff;
+                    border-radius: 50rem;
+                    left: calc(50% - 8.5rem);
+                }
                 #waveCanvas { display: none; }
-                .scroll { display: none; }
+                // .scroll { display: none; }
             }
             // 콘텐츠 그룹
             article {
