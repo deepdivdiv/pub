@@ -880,16 +880,15 @@ body {
                 z-index: -1;
                 position: absolute;
                 top: 0;
+                opacity: 0;
             }
             #waveCanvas {
                 rotate: 180deg;
                 position: absolute;
-                top: -10vw;
+                top: 0;
+                transform: translateY(100%);
                 opacity: 1;
                 z-index: -1;
-                // height: 100vh;
-                // translate: 0 -100%;
-                // transition: translate 1300ms;
             }
             .m_inner {
                 max-width: 140rem;
@@ -1989,6 +1988,15 @@ body {
         cursor: default;
         a, button { cursor: unset; }
         .cursor { display: none !important; }
+        .waveBG-mo {
+            width: 100%;
+            height: 0%;
+            background: $color-main;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            opacity: 0;
+        }
         // 다크테마
         &.dark {
             header {
@@ -2012,7 +2020,7 @@ body {
                 }
             }
             #wrap {
-                main { background: #222; }
+                .waveBG-mo { background: #222; }
             }
         }
         // 헤더
@@ -2100,23 +2108,20 @@ body {
             .con_tit {
                 padding-bottom: 2rem;
                 h1 {
-                    font-size: 3rem;
+                    font-size: 4rem;
                 }
             }
             // 메인섹션
             > main {
-                height: 100vh;
-                background: $color-main;
-
-                
                 img {
                     max-width: 30rem;
                 }
                 .m_inner {
                     height: 100%;
                     gap: 2rem;
-                    padding: 7rem 4rem 15rem;
+                    padding: 7rem 4rem calc(9vw + 21rem);
                     flex-direction: column;
+                    justify-content: center;
                 }
                 .m_copy { 
                     text-align: center; 
@@ -2132,16 +2137,24 @@ body {
                         color: #fff;
                         padding: 2rem 0 1rem;
                         br { display: none; }
+                        @media (width <= 768px) {
+                            font-size: 9vw;
+                            br { display: block; }
+                        }
                     }
                     .svg-txt { display: none; }
                 }
                 .scroll {
-                    bottom: 13vw;
-                    padding: 1.5rem;
+                    bottom: 5vw;
                     z-index: 6;
-                    background: #fff;
-                    border-radius: 50rem;
+                    transition: bottom 500ms;
                     left: calc(50% - 8.5rem);
+                    i {
+                        background-image: svg-icon(logo-symbol, $color-white-svg);
+                    }
+                    span {
+                        background-image: svg-icon(scroll-down, $color-white-svg);
+                    }
                 }
                 #waveCanvas { display: none; }
                 // .scroll { display: none; }
@@ -2219,6 +2232,10 @@ body {
                 }
             }
         }
+    }
+    @media (height <= 600px) and (width <= 1024px) {
+        .scroll { display: none !important; }
+        .m_inner { padding: 3rem !important; }
     }
 }
 // 메인 인트로 텍스트 드로우

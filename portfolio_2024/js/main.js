@@ -1,6 +1,4 @@
-
-let winSc = 0;
-const winMo = window.matchMedia("(max-width: 1024px)").matches;
+let winMo = window.matchMedia("(max-width: 1024px)").matches;
 
 // 퀵메뉴 영역
   function nmv(seq){
@@ -201,7 +199,7 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
     webSwiperWrap.before(webPrev);
     webSwiperWrap.after(webNext);
 
-  webSlidesData.forEach(data => {
+    webSlidesData.forEach(data => {
       const webSlide = document.createElement('div');
       webSlide.className = 'swiper-slide';
       webSlide.innerHTML = `
@@ -226,10 +224,8 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
               </div>
           </div>
       `;
-  
       webSwiperWrap.appendChild(webSlide);
-
-  });
+    });
   designSlidesData.forEach(data => {
       const designSlide = document.createElement('div');
       designSlide.className = 'swiper-slide';
@@ -366,7 +362,6 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
             frequency: 0.5,
         },
     ];
-    
     function drawWave(wave, phase) {
         ctx.strokeStyle = wave.color;
         ctx.fillStyle = wave.color;
@@ -380,12 +375,10 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
                 let endX = wave.points[i + 1].x;
                 let startY = (point.yPercentage / 100) * window.innerHeight + point.amplitude * Math.sin(phase * wave.frequency + i + wave.offset);
                 let endY = (wave.points[i + 1].yPercentage / 100) * window.innerHeight + wave.points[i + 1].amplitude * Math.sin(phase * wave.frequency + i + 1 + wave.offset);
-    
                 let controlX1 = (2 * startX + endX) / 3;
                 let controlY1 = startY;
                 let controlX2 = (startX + 2 * endX) / 3;
                 let controlY2 = endY;
-    
                 ctx.bezierCurveTo(controlX1, controlY1, controlX2, controlY2, endX, endY);
             }
         });
@@ -404,13 +397,10 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
         }
         requestAnimationFrame(animate);
     }
-    
     for (let wave of waves) {
         wave.phase = 0;
     }
-    
     animate();
-    
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -418,8 +408,7 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
             wave.points[wave.points.length - 1].x = canvas.width;
         }
     });
-  // 효과 영역
-    
+  // 테마변경 버튼
   $('.col-tog').click(function() {
     if($('body').hasClass("dark") === false) {
       $('body').addClass("dark");
@@ -429,6 +418,7 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
       $(this).removeClass('active');
     }
   });
+  // 메뉴 토글 모바일용
   $('.menu-tog').click(function() {
     if($(this).hasClass('active') === false) {
       $(this).addClass('active');
@@ -437,70 +427,46 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
       $(this).removeClass('active');
       $('nav').removeClass('on');
     }
-    
   });
+  gsap.set(['#waveCanvas', '.waveBG'], {opacity:1, y:"-100%"});
+
   let introText = gsap.timeline();
+  introText.to('#waveCanvas', {opacity: 1, duration:3, y: 0, delay: 0.5, ease: "elastic.out(0.1,0.5)",})
+  .to('.waveBG', {opacity: 1, duration:0.5, y: 0, delay: 0})
+  .to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 0}, "-=2")
+  .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.5")
+  .to('.m_copy h2', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.2")
+  .to('.svg-txt path', {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85}, "-=1.5")
+  .to('.svg-txt path', {fill:"#fff"}, "-=1.2")
+  .to('.m_copy p', {opacity: 1, duration:0.5, y:0,}, "-=1")
+  .to('.scroll', {opacity: 1, duration:0.5}, "-=0.5");
 
+  
 
-  // 캔버스
-  gsap.to(".waveBG", {
+  // 스크롤 오브제
+  gsap.to(".scroll span", {
+
     scrollTrigger: {
       trigger: "#content01",
-      start: "60% 100%",
+      start: "top center",
       scrub: 1,
     },
-    height: "50%",
+    rotate: 180, duration: 10,
   });
-  gsap.to("#waveCanvas", {
+  gsap.to(".scroll", {
     scrollTrigger: {
       trigger: "#content01",
-      start: "0% 20%",
-      end: "100% 40%",
-      scrub: 1,
+      start: "center bottom",
+      scrub: 5,
     },
-    y: "30vh",
+    y: "150%", duration: 0.1,
   });
-
-    // 스크롤 오브제
-    gsap.to(".scroll span", {
-
-      scrollTrigger: {
-        trigger: "#content01",
-        start: "top center",
-        scrub: 1,
-      },
-      rotate: 180, duration: 10,
-    });
-    gsap.to(".scroll", {
-      scrollTrigger: {
-        trigger: "#content01",
-        start: "center bottom",
-        scrub: 5,
-      },
-      y: "150%", duration: 0.1,
-    });
-    
-    if(winMo) {
-      gsap.killTweensOf(".scroll");
-      introText.to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 1.4})
-      .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1})
-      .to('.m_copy h2', {opacity: 1, duration:0.5, y: 0, delay: .1})
-      .to('.m_copy p', {opacity: 1, duration:0.5, y:0,})
-      .to('.scroll', {opacity: 1, duration:0.5});
-    } else {
-      introText.to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 1.4})
-      .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1})
-      .to('.svg-txt path', {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85})
-      .to('.svg-txt path', {fill:"#fff"})
-      .to('.m_copy p', {opacity: 1, duration:0.5, y:0,})
-      .to('.scroll', {opacity: 1, duration:0.5});
-    }
-
+  
   // 스크롤이벤트
   const about_tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".cont-about",
-      start: "-10% 70%",
+      start: "10% 60%",
       end: "80% 100%",
       scrub: 3,
       anticipatePin: 1,
@@ -515,16 +481,19 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
       anticipatePin: 1,
     }
   });
-  
-  
+  if(winMo) {
+    gsap.killTweensOf(".scroll");
+    gsap.to(".waveBG-mo", { height: "100vh", opacity:1, delay:0.5, duration:2, ease: "expo.inOut", });
+    gsap.to(".scroll", { y: "0%", opacity:1, delay:3.5 });
+  }
   /* About 애니메이션 */
   
   about_tl.to(".profile-info .con_tit", {
     opacity:1, x:0, duration:2,
-  })
+  }, "+=2")
   .to(".profile-thumb", {
     scale: 1,  duration: 20, opacity: 1, rotate: 0,
-  })
+  }, "+=1")
   .to(".about-pr h2", {
     opacity:1, x:0, duration:20,
   }, "-=5")
@@ -555,10 +524,14 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
 
 
   $(window).scroll(function(){
-    winSc = $(window).scrollTop();
+    const winSc=$(window).scrollTop();
+    
+    
     // 헤더 고정
+    
     if(winSc > (winMo ? 0 : 780)) {
       $('header').addClass('head-fix');
+      
     } else if($('nav').hasClass('on') === true) {
       $('header').addClass('head-fix');
     } else {
