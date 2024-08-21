@@ -430,16 +430,6 @@ let winMo = window.matchMedia("(max-width: 1024px)").matches;
   });
   gsap.set(['#waveCanvas', '.waveBG'], {opacity:1, y:"-100%"});
 
-  let introText = gsap.timeline();
-  introText.to('#waveCanvas', {opacity: 1, duration:3, y: 0, delay: 0.5, ease: "elastic.out(0.1,0.5)",})
-  .to('.waveBG', {opacity: 1, duration:0.5, y: 0, delay: 0})
-  .to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 0}, "-=2")
-  .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.5")
-  .to('.m_copy h2', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.2")
-  .to('.svg-txt path', {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85}, "-=1.5")
-  .to('.svg-txt path', {fill:"#fff"}, "-=1.2")
-  .to('.m_copy p', {opacity: 1, duration:0.5, y:0,}, "-=1")
-  .to('.scroll', {opacity: 1, duration:0.5}, "-=0.5");
 
   
 
@@ -481,11 +471,50 @@ let winMo = window.matchMedia("(max-width: 1024px)").matches;
       anticipatePin: 1,
     }
   });
-  if(winMo) {
-    gsap.killTweensOf(".scroll");
-    gsap.to(".waveBG-mo", { height: "100vh", opacity:1, delay:0.5, duration:2, ease: "expo.inOut", });
-    gsap.to(".scroll", { y: "0%", opacity:1, delay:3.5 });
+  
+  // if(winMo) {
+  //   gsap.killTweensOf(".scroll");
+  //   gsap.to(".waveBG-mo", { height: "100vh", opacity:1, delay:0.5, duration:2, ease: "expo.inOut", });
+  //   gsap.to(".scroll", { y: "0%", opacity:1, delay:3.5 });
+  // }
+
+  function handleResize() {
+    const CheckMo = window.innerWidth <= 1024; 
+    if (CheckMo) {
+      let introText = gsap.timeline();
+      introText.to('#waveCanvas', {opacity: 1, duration:3, y: 0, delay: 0.5, ease: "elastic.out(0.1,0.5)",})
+      .to('.waveBG', {opacity: 1, duration:0.5, y: 0, delay: 0})
+      .to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 0}, "-=2")
+      .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.5")
+      .to('.m_copy h2', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.2")
+      .to('.svg-txt path', {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85}, "-=1.5")
+      .to('.svg-txt path', {fill:"#fff"}, "-=1.2")
+      .to('.m_copy p', {opacity: 1, duration:0.5, y:0,}, "-=1")
+      .to('.scroll', {opacity: 1, duration:0.5}, "-=0.5");
+      gsap.to(".waveBG-mo", { height: "100vh", opacity:1, delay:0.5, duration:2, ease: "expo.inOut" });
+      gsap.to(".scroll", { y: "0%", opacity:1, delay:3.5 });
+    } else {
+      let introText = gsap.timeline();
+      introText.to('#waveCanvas', {opacity: 1, duration:3, y: 0, delay: 0.5, ease: "elastic.out(0.1,0.5)",})
+      .to('.waveBG', {opacity: 1, duration:0.5, y: 0, delay: 0})
+      .to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 0}, "-=2")
+      .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.5")
+      .to('.m_copy h2', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.2")
+      .to('.svg-txt path', {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85}, "-=1.5")
+      .to('.svg-txt path', {fill:"#fff"}, "-=1.2")
+      .to('.m_copy p', {opacity: 1, duration:0.5, y:0,}, "-=1")
+      .to('.scroll', {opacity: 1, duration:0.5}, "-=0.5");
+    
+    }
   }
+  
+  // 페이지 로드 시 초기화
+  handleResize();
+  
+  // 해상도가 변경될 때마다 handleResize 함수 실행
+  window.addEventListener('resize', handleResize);
+  
+
   /* About 애니메이션 */
   
   about_tl.to(".profile-info .con_tit", {
