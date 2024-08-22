@@ -411,8 +411,8 @@ html {
             }
             &.hover {
                 mix-blend-mode: unset;
-                width: 5rem;
-                height: 5rem;
+                width: 4rem;
+                height: 4rem;
                 border-radius: 10rem;
                 background: rgba(#000000, .6);
                 display: flex;
@@ -421,14 +421,15 @@ html {
                 justify-content: center;
                 &::after {
                     content: "";
+                    background-size: auto auto;
                     width: 1.5rem; height: 2.2rem;
-                    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 228 225' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M39 51H49H54H71C76.5229 51 81 55.4771 81 61C81 66.5229 76.5229 71 71 71H54H49H39C28.5066 71 20 79.5066 20 90V186C20 196.493 28.5066 205 39 205H135C145.493 205 154 196.493 154 186V162V152V140C154 134.477 158.477 130 164 130C169.523 130 174 134.477 174 140V152V162V186C174 207.539 156.539 225 135 225H39C17.4609 225 0 207.539 0 186V90C0 68.4609 17.4609 51 39 51Z' fill='rgb(255,255,255)'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M164.85 49.6421L137.285 49.6421C131.763 49.6421 127.285 45.165 127.285 39.6421C127.285 34.1193 131.763 29.6421 137.285 29.6421L188.285 29.6421C190.537 29.6421 192.615 30.3863 194.286 31.6422C196.715 33.4667 198.285 36.371 198.285 39.6422V90.6422C198.285 96.165 193.808 100.642 188.285 100.642C182.763 100.642 178.285 96.1651 178.285 90.6422L178.285 64.4914L72.0668 170.71C68.1616 174.615 61.8299 174.615 57.9247 170.71C54.0195 166.805 54.0195 160.473 57.9247 156.568L164.85 49.6421Z' fill='rgb(255,255,255)'/%3E%3C/svg%3E%0A") no-repeat 0 0;
+                    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 228 225' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M39 51H49H54H71C76.5229 51 81 55.4771 81 61C81 66.5229 76.5229 71 71 71H54H49H39C28.5066 71 20 79.5066 20 90V186C20 196.493 28.5066 205 39 205H135C145.493 205 154 196.493 154 186V162V152V140C154 134.477 158.477 130 164 130C169.523 130 174 134.477 174 140V152V162V186C174 207.539 156.539 225 135 225H39C17.4609 225 0 207.539 0 186V90C0 68.4609 17.4609 51 39 51Z' fill='rgb(255,255,255)'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M164.85 49.6421L137.285 49.6421C131.763 49.6421 127.285 45.165 127.285 39.6421C127.285 34.1193 131.763 29.6421 137.285 29.6421L188.285 29.6421C190.537 29.6421 192.615 30.3863 194.286 31.6422C196.715 33.4667 198.285 36.371 198.285 39.6422V90.6422C198.285 96.165 193.808 100.642 188.285 100.642C182.763 100.642 178.285 96.1651 178.285 90.6422L178.285 64.4914L72.0668 170.71C68.1616 174.615 61.8299 174.615 57.9247 170.71C54.0195 166.805 54.0195 160.473 57.9247 156.568L164.85 49.6421Z' fill='rgb(255,255,255)'/%3E%3C/svg%3E%0A") no-repeat center center;
                 }
             }
             &.slideGrab {
                 mix-blend-mode: unset;
-                width: 5rem;
-                height: 5rem;
+                width: 4rem;
+                height: 4rem;
                 border-radius: 10rem;
                 background: rgba(#000000, .6);
                 display: flex;
@@ -437,8 +438,9 @@ html {
                 justify-content: center;
                 &::after {
                     content: "";
-                    width: 2rem; height: 1rem;
-                    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 205 93' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M53.1335 17.4724L33.6421 36.9639H171.251L151.759 17.4724C147.854 13.5672 147.854 7.23554 151.759 3.33029C155.665 -0.574943 161.996 -0.574943 165.901 3.3303L201.964 39.3927C203.556 40.9849 204.499 42.9804 204.793 45.0504C205.22 48.0575 204.277 51.2219 201.964 53.5349L165.901 89.5974C161.996 93.5026 155.665 93.5026 151.759 89.5974C147.854 85.6921 147.854 79.3605 151.759 75.4552L170.251 56.9638H34.6422L53.1336 75.4552C57.0388 79.3605 57.0388 85.6921 53.1336 89.5974C49.2283 93.5026 42.8967 93.5026 38.9914 89.5974L2.92899 53.5349C0.615911 51.2219 -0.327174 48.0575 0.0997979 45.0504C0.393713 42.9804 1.33677 40.9849 2.92893 39.3927L38.9914 3.3303C42.8966 -0.574943 49.2283 -0.574943 53.1335 3.33029C57.0388 7.23554 57.0388 13.5672 53.1335 17.4724Z' fill='rgba(255,255,255)'/%3E%3C/svg%3E%0A") no-repeat 0 0;
+                    background-size: auto auto;
+                    width: 1.7rem; height: 0.7rem;
+                    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 205 93' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M53.1335 17.4724L33.6421 36.9639H171.251L151.759 17.4724C147.854 13.5672 147.854 7.23554 151.759 3.33029C155.665 -0.574943 161.996 -0.574943 165.901 3.3303L201.964 39.3927C203.556 40.9849 204.499 42.9804 204.793 45.0504C205.22 48.0575 204.277 51.2219 201.964 53.5349L165.901 89.5974C161.996 93.5026 155.665 93.5026 151.759 89.5974C147.854 85.6921 147.854 79.3605 151.759 75.4552L170.251 56.9638H34.6422L53.1336 75.4552C57.0388 79.3605 57.0388 85.6921 53.1336 89.5974C49.2283 93.5026 42.8967 93.5026 38.9914 89.5974L2.92899 53.5349C0.615911 51.2219 -0.327174 48.0575 0.0997979 45.0504C0.393713 42.9804 1.33677 40.9849 2.92893 39.3927L38.9914 3.3303C42.8966 -0.574943 49.2283 -0.574943 53.1335 3.33029C57.0388 7.23554 57.0388 13.5672 53.1335 17.4724Z' fill='rgba(255,255,255)'/%3E%3C/svg%3E%0A") no-repeat center center;
                 }
             }
         }
@@ -528,12 +530,15 @@ header {
         ul { 
             display: flex;
             li {
-                padding: 3.2rem 3rem;
                 line-height: 1;
                 position: relative;
                 font: {
                     size: $fz-16;
                     weight: $fw-regular;
+                }
+                a {
+                    display: block;
+                    padding: 3.2rem 3rem;
                 }
                 &::before {
                     content: "";
@@ -1872,7 +1877,6 @@ body {
                                     width: 90%;
                                     max-width: 58rem;
                                     left: 50%;
-                                    z-index: 4;
                                     transform: translateX(-50%);
                                 }
                                 .swiper-slide {
@@ -1891,14 +1895,18 @@ body {
                                         .btn-area { justify-content: center; }
                                     }
                                     .pj-thumb {
-                                        width:90%;
+                                        width: 85.3%;
                                         max-width: 55rem;
-                                        top: 1vw;
+                                        top: 1.6rem;
                                         left: 0;
                                         height: auto;
-                                        aspect-ratio: 16 / 9; 
+                                        aspect-ratio: 16 / 8.5;
                                         border-radius: 0;
-                                        margin: 0 auto;
+                                        margin: 0 auto 4vw;
+                                        @media (width <= 768px) {
+                                            top: 2.2vw;
+                                            aspect-ratio: 16 / 8.6;
+                                        }
                                     }
     
                                 }
@@ -2040,26 +2048,26 @@ body {
             nav {
                 position: fixed;
                 left: 0;
+                height: 0;
+                background: $color-main;
                 top: 6.8rem;
-                width: 100%; height: 120vh;
+                width: 100%;
                 overflow: hidden;
-                transition: height 2500ms;
-                display: none;
-                animation: nav-on 500ms ease-in-out forwards;
-                // nav > ul
+                transition: height 500ms;
                 ul {
                     width: 100%;
                     display: block;
                     position: relative;
-                    top: 2rem;
                     flex-direction: column;
                     width: 100%;
                     align-items: center;
                     justify-content: center;
                     li {
                         color: rgba(#fff, .7);
-                        padding: 2rem 3rem;
                         position: relative;
+                        
+                        align-items: center;
+                        display: flex;
                         border-bottom: 1px solid rgba(#fff, .3);
                         &:hover, &:focus {
                             color: #fff;
@@ -2071,30 +2079,18 @@ body {
                             position: absolute;
                             right: 3rem;
                         }
+                        a {
+                            display: block;
+                            width: 100%;
+                            padding: 2rem 3rem;
+                        }
                     }
                 }
                 // nav.on
                 &.on {
-                    transition: height 2500ms;
+                    transition: height 500ms;
                     width: 100%;
                     height: 100vh;
-                    background: $color-main;
-                    display: block;
-                    animation: nav-on 500ms ease-in-out ;
-                    ul {
-                        top: 0;
-
-                    }
-                }
-            }
-            @keyframes nav-on {
-                0% {
-                    opacity: 0;
-                    transform: translateY(-5rem);
-                }
-                100% {
-                    opacity: 1;
-                    transform: translateY(0);
                 }
             }
             .h_inner {
@@ -2233,6 +2229,7 @@ body {
             }
         }
     }
+
     @media (height <= 600px) and (width <= 1024px) {
         .scroll { display: none !important; }
         .m_inner { padding: 3rem !important; }
@@ -2541,13 +2538,9 @@ body {
         }
     }
     @container guide-con (max-width: 110rem) {
-        header {
+        .sg-inner header {
             padding: 2.5rem;
-            h1 a {
-                background: svg-icon(logo-symbol, $color-main-svg) no-repeat;
-                width: 6.2rem; 
-                min-width: 6.2rem;
-            }   
+
         }
         .sg-inner > article {
             padding: 0 2.5rem;
@@ -2563,9 +2556,17 @@ body {
             }
             .btn-st-box, .box-style { padding: 4rem;}
         }
-        @container guide-con (max-width: 60rem) {
+        @container guide-con (max-width: 70rem) {
             .sg-inner {
                 padding: 0;
+                header {
+                    h1 a {
+                        background: svg-icon(logo-symbol, $color-main-svg) no-repeat;
+                        width: 6.2rem; 
+                        min-width: 6.2rem;
+                    }   
+                    h1 span { display: none; }
+                }
             }
         }
     } 

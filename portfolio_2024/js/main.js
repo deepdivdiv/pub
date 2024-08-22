@@ -1,15 +1,11 @@
 let winMo = window.matchMedia("(max-width: 1024px)").matches;
-
 // 퀵메뉴 영역
-  function nmv(seq){
-      const offset = $("#content" + seq).offset();
-      // 메뉴 클릭시 해당 콘텐츠로 이동 gsap 이벤트 활용
-      gsap.to(window, {duration: 1, scrollTo:{y:"#content" + (seq), offsetY:80}});
-  };
-
-
+function nmv(seq){
+    const offset = $("#content" + seq).offset();
+    // 메뉴 클릭시 해당 콘텐츠로 이동 gsap scrollTo 플러그인 활용
+    gsap.to(window, {duration: 1, scrollTo:{y:"#content" + (seq), offsetY:80}});
+};
   // 슬라이드 영역
-
     // Project Publishing 영역 
     const fileRoot = "https://deepdiv.cafe24.com/2024Portfolio/img/projects/"
     const webSlidesData = [
@@ -54,8 +50,8 @@ let winMo = window.matchMedia("(max-width: 1024px)").matches;
           description: "2023년 리뉴얼 퍼블리싱 작업을 완료했습니다. 웹표준 및 웹접근성을 준수하였습니다. 기존 사이트의 데이터를 유지하면서 메인 페이지만 새롭게 디자인 및 퍼블리싱하는 작업이었으며, 기존 데이터와 신규 작업 영역을 문제없이 마이그레이션했습니다. 이 과정에서 추가 개발 없이 퍼블리싱과 마이그레이션 작업을 독립적으로 수행했으며, 이를 통해 JSP를 보다 심도 있게 다룰 수 있는 기회를 가졌습니다.", // 설명
           contribution: "100%", // 기여도 퍼센트
           workScope: "전체", // 작업영역
-          link: "https://dx.kofac.re.kr/dx/main", // 링크
-          view: "https://mud-chess-378.notion.site/b5ddd54a6e754259b8a63d02533ff861", // 뷰페이지(노션)
+          link: "https://www.kculture.or.kr/main/kculture", // 링크
+          view: "https://mud-chess-378.notion.site/c96bfa13481842b9959b8dc2fa0a1060", // 뷰페이지(노션)
       },
       {
           imgSrc: fileRoot + "2024_kosti.JPG", // 이미지 경로
@@ -106,7 +102,7 @@ let winMo = window.matchMedia("(max-width: 1024px)").matches;
         title: "2023 오영은 포트폴리오", // 제목
         value: "WEB DESIGN", // 제목
         year: "2023년",
-        view: "", // 뷰페이지(노션)
+        view: "https://mud-chess-378.notion.site/2023-3a6c77d15c4848058fdb80fb9f59fbd0", // 뷰페이지(노션)
       },
       {
           imgSrc: fileRoot + "2022_dc_ak_draft.png", // 이미지 경로
@@ -234,7 +230,7 @@ let winMo = window.matchMedia("(max-width: 1024px)").matches;
               <i class="signal"></i>
               <img src="${data.imgSrc}" alt="${data.imgAlt}">
           </div>
-          <a href="${data.view}">
+          <a href="${data.view}" target="_blank" title="새 창으로 이동합니다.">
           <dl>
               <dt>${data.title}<i></i></dt>
               <dd><span>${data.value}</span>${data.year}</dd>
@@ -427,31 +423,12 @@ let winMo = window.matchMedia("(max-width: 1024px)").matches;
       $(this).removeClass('active');
       $('nav').removeClass('on');
     }
+    $('nav.on li').click(function() {
+      $('nav').removeClass('on');
+      $('.menu-tog').removeClass('active');
+    });
   });
   gsap.set(['#waveCanvas', '.waveBG'], {opacity:1, y:"-100%"});
-
-
-  
-
-  // 스크롤 오브제
-  gsap.to(".scroll span", {
-
-    scrollTrigger: {
-      trigger: "#content01",
-      start: "top center",
-      scrub: 1,
-    },
-    rotate: 180, duration: 10,
-  });
-  gsap.to(".scroll", {
-    scrollTrigger: {
-      trigger: "#content01",
-      start: "center bottom",
-      scrub: 5,
-    },
-    y: "150%", duration: 0.1,
-  });
-  
   // 스크롤이벤트
   const about_tl = gsap.timeline({
     scrollTrigger: {
@@ -472,47 +449,96 @@ let winMo = window.matchMedia("(max-width: 1024px)").matches;
     }
   });
   
-  // if(winMo) {
-  //   gsap.killTweensOf(".scroll");
-  //   gsap.to(".waveBG-mo", { height: "100vh", opacity:1, delay:0.5, duration:2, ease: "expo.inOut", });
-  //   gsap.to(".scroll", { y: "0%", opacity:1, delay:3.5 });
-  // }
+  
+  let currentMode = ''; // 현재 모드를 저장하기 위한 변수
 
-  function handleResize() {
-    const CheckMo = window.innerWidth <= 1024; 
-    if (CheckMo) {
-      let introText = gsap.timeline();
-      introText.to('#waveCanvas', {opacity: 1, duration:3, y: 0, delay: 0.5, ease: "elastic.out(0.1,0.5)",})
-      .to('.waveBG', {opacity: 1, duration:0.5, y: 0, delay: 0})
-      .to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 0}, "-=2")
-      .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.5")
-      .to('.m_copy h2', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.2")
-      .to('.svg-txt path', {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85}, "-=1.5")
-      .to('.svg-txt path', {fill:"#fff"}, "-=1.2")
-      .to('.m_copy p', {opacity: 1, duration:0.5, y:0,}, "-=1")
-      .to('.scroll', {opacity: 1, duration:0.5}, "-=0.5");
-      gsap.to(".waveBG-mo", { height: "100vh", opacity:1, delay:0.5, duration:2, ease: "expo.inOut" });
-      gsap.to(".scroll", { y: "0%", opacity:1, delay:3.5 });
-    } else {
-      let introText = gsap.timeline();
-      introText.to('#waveCanvas', {opacity: 1, duration:3, y: 0, delay: 0.5, ease: "elastic.out(0.1,0.5)",})
-      .to('.waveBG', {opacity: 1, duration:0.5, y: 0, delay: 0})
-      .to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 0}, "-=2")
-      .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.5")
-      .to('.m_copy h2', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.2")
-      .to('.svg-txt path', {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85}, "-=1.5")
-      .to('.svg-txt path', {fill:"#fff"}, "-=1.2")
-      .to('.m_copy p', {opacity: 1, duration:0.5, y:0,}, "-=1")
-      .to('.scroll', {opacity: 1, duration:0.5}, "-=0.5");
-    
-    }
+function initMobileAnimation() {
+  // 기존 애니메이션과 ScrollTrigger를 초기화
+  gsap.killTweensOf([".scroll", ".waveBG-mo", ".m_inner img", ".m_copy span", ".m_copy h2", ".m_copy p"]);
+  // ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+  // 요소 초기화 (숨기기)
+  gsap.set([".waveBG-mo", ".scroll", ".m_inner img", ".m_copy span", ".m_copy h2", ".m_copy p"], { opacity: 0, y:0 });
+
+  let introTextMo = gsap.timeline();
+
+  // 스크롤 오브제
+  gsap.to(".scroll span", {
+
+    scrollTrigger: {
+      trigger: "#content01",
+      start: "top center",
+      scrub: 1,
+    },
+    rotate: 180, duration: 10,
+  });
+  
+  introTextMo.to(".waveBG-mo", { height: "100vh", opacity:1, delay:0.5, duration:2, ease: "expo.inOut" })
+    .to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 0})
+    .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1})
+    .to('.m_copy h2', {opacity: 1, duration:0.5, y: 0, delay: .1})
+    .to('.m_copy p', {opacity: 1, duration:0.5, y:0,})
+    .to('.scroll', {opacity: 1, duration:0.5});
+}
+
+function initPCAnimation() {
+  // 기존 애니메이션과 ScrollTrigger를 초기화
+  gsap.killTweensOf(["#waveCanvas", ".waveBG", ".scroll", ".m_inner img", ".m_copy span", ".m_copy h2", ".svg-txt path", ".m_copy p"]);
+  // ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+  // 요소 초기화 (숨기기)
+  gsap.set(["#waveCanvas", ".waveBG", ".scroll", ".m_inner img", ".m_copy span", ".m_copy h2", ".svg-txt path", ".m_copy p"], { opacity: 0 });
+
+  let introText = gsap.timeline();
+  // 스크롤 오브제
+  gsap.to(".scroll span", {
+
+    scrollTrigger: {
+      trigger: "#content01",
+      start: "top center",
+      scrub: 1,
+    },
+    rotate: 180, duration: 10,
+  });
+  gsap.to(".scroll", {
+    scrollTrigger: {
+      trigger: "#content01",
+      start: "center bottom",
+      scrub: 5,
+    },
+    y: "150%", duration: 0.1,
+  });
+
+  introText.to('#waveCanvas', {opacity: 1, duration:3, y: 0, delay: 0.5, ease: "elastic.out(0.1,0.5)",})
+    .to('.waveBG', {opacity: 1, duration:0.5, y: 0, delay: 0})
+    .to('.m_inner img', {opacity: 1, duration:0.5, x: 0, delay: 0}, "-=2")
+    .to('.m_copy span', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.5")
+    .to('.m_copy h2', {opacity: 1, duration:0.5, y: 0, delay: .1}, "-=1.2")
+    .to('.svg-txt path', {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85}, "-=1.5")
+    .to('.svg-txt path', {fill:"#fff"}, "-=1.2")
+    .to('.m_copy p', {opacity: 1, duration:0.5, y:0,}, "-=1")
+    .to('.scroll', {opacity: 1, duration:0.5}, "-=0.5");
+}
+
+function handleResize() {
+  const isMobile = window.innerWidth <= 1024;
+
+  // 해상도가 변경되었을 때만 애니메이션 초기화 및 재설정
+  if (isMobile && currentMode !== 'mobile') {
+    currentMode = 'mobile';
+    initMobileAnimation();
+  } else if (!isMobile && currentMode !== 'pc') {
+    currentMode = 'pc';
+    initPCAnimation();
   }
-  
-  // 페이지 로드 시 초기화
-  handleResize();
-  
-  // 해상도가 변경될 때마다 handleResize 함수 실행
-  window.addEventListener('resize', handleResize);
+}
+
+// 페이지 로드 시 초기화
+handleResize();
+
+// 해상도가 변경될 때마다 handleResize 함수 실행
+window.addEventListener('resize', handleResize);
+
   
 
   /* About 애니메이션 */
