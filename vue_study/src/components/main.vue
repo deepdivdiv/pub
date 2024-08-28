@@ -78,15 +78,15 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
                 start: "center bottom",
                 scrub: 5,
                 },
-                y: "150%", duration: 0.1,
+                y: "180%", duration: 0.1,
             });
             gsap.to("#waveCanvas", {
                 scrollTrigger: {
                 trigger: "#chapter1",
                 start: "top bottom",
-                scrub: 3,
+                scrub: 0,
                 },
-                y: "30%", duration: 0.1,
+                y: "20%", duration: 0.1,
             });
         });
 

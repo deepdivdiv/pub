@@ -8,6 +8,15 @@
           <li v-for="(item, i) in navData" :key="i" @click="scrollToSection(i + 1)">{{ item }}</li>
         </ul>
       </nav>
+      <button class="col-tog">
+          <i>
+              <img src="../assets/img/mode-sun.svg" alt="">
+              <img src="../assets/img/mode-moon.svg" alt="">
+          </i>
+      </button>
+      <button class="menu-tog">
+          <i></i>
+      </button>
     </div>
   </header>
 </template>

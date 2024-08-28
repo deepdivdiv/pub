@@ -1,7 +1,10 @@
 <template>
-    <div>
-        <h1>프로젝트</h1>
-    </div>
+    <article>
+        <section>
+            <h1>프로젝트</h1>
+
+        </section>
+    </article>
 </template>
 
 <script>

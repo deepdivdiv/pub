@@ -1,10 +1,16 @@
 <template>
-  <div class="wrap">
+  <div id="skipMenu">
+      <a href="#gnb">메뉴바로가기</a>
+      <a href="#chapter2">본문바로가기</a>
+  </div>
+  <div id="wrap">
     <div class="processbar"></div>
     <appHeader></appHeader>
     <appMain id="chapter1"></appMain>
-    <appAbout id="chapter2"></appAbout>
-    <appProject id="chapter3"></appProject>
+    <article>
+      <appAbout id="chapter2"></appAbout>
+      <appProject id="chapter3"></appProject>
+    </article>
     <appFooter id="chapter4"></appFooter>
   </div>
 </template>
@@ -15,7 +21,7 @@ import appHeader from './components/header.vue'
 import appFooter from './components/footer.vue'
 import appAbout from './components/about.vue'
 import appMain from './components/main.vue'
-import appProject from './components/project.vue'
+import appProject from './components/project_pub.vue'
 
 export default {
   name: 'App',
