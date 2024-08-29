@@ -74,32 +74,7 @@ $palette-data: (
     $icon: map-get($iconSet, $imgName);
     @return url("#{$icon}");
 }
-// DL INFO
-@mixin dl-info {
-    p {
-        font: {
-            size: $fz-16;
-            weight: $fw-bold;
-        }
-        color: $color-main;
-        &.gray { color: $color-gray-9; }
-    }
-    dl {
-        
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        gap: 1.5rem 1rem;
-        line-height: 1.3;
-        margin-top: 1.5rem;
-        font: {
-            size: $fz-14;
-        }
-        dt { width: 4rem; color: $color-gray-7; }
-        dd { width: calc(100% - 5rem); color: $color-gray-9; }
-    }
-    @content;
-}
+
 // BUTTON STYLE
 @mixin button-style($jcc:center, $b-wd:16rem) {
     display: flex;
@@ -1459,7 +1434,6 @@ body {
                                         width: 100%;
                                         height: 100%;
                                         transition: object-position 2000ms linear;
-
                                     }
                                     &:hover {
                                         img {
