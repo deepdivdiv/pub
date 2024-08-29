@@ -62,7 +62,7 @@
                     <div class="btn-area">
                         <button class="design-prev arr-set-prev"><i></i></button>
                         <button class="design-next arr-set-next"><i></i></button>
-                        <a href="" class="btn-set-arr">작업물 더보기</a>
+                        <a href="https://mud-chess-378.notion.site/6871c63fbcb04ae0a7dcd222b115eff6?v=7ec96a3ef37c40798b843f4447c09532" target="_blank" class="btn-set-arr">작업물 더보기</a>
                     </div>
                 </div>
             </div>
@@ -129,12 +129,9 @@ export default{
         {opacity:0, y:30}, { opacity: 1, y:0}, "-=0.5")
         ;
       });
-
         return {
             modules: [EffectFade, Navigation, Pagination],
         }
-        
-        
     },
     data(){
       return {

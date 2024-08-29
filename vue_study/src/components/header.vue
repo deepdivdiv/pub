@@ -8,9 +8,9 @@
     <h1 class="none">HEADER</h1>
     <div class="h_inner">
       <router-link to="/" class="logo" target="_blank"></router-link>
-      <nav>
+      <nav :class="{ active : navActive}" :aria-expanded="navActive.toString()">
         <ul>
-          <li :id="i === 0 ? 'gnb':null" v-for="(item, i) in navData" :key="i" @click="scrollToSection(i + 1)" tabindex="0">{{ item }}</li>
+          <li :id="i === 0 ? 'gnb':null" v-for="(item, i) in navData" :key="i" @click="handleNavItemClick(i + 1)" tabindex="0">{{ item }}</li>
         </ul>
       </nav>
       <button class="col-tog" @click="toggleMode" :class="{ active:isActive}">
@@ -19,7 +19,7 @@
               <img src="../assets/img/mode-moon.svg" alt="">
           </i>
       </button>
-      <button class="menu-tog">
+      <button class="menu-tog" @click="toggleNav" :class="{ active:navActive}">
           <i></i>
       </button>
     </div>
@@ -29,7 +29,7 @@
 <script>
 const bodyEl = document.body.classList;
 import { onMounted } from 'vue';
-
+  
 export default {
   name: 'appHeader',
   setup() {
@@ -45,9 +45,14 @@ export default {
       winSc: 0,
       headerFix: false,
       isActive: false,
+      navActive: false,
+      isMobile: window.innerWidth <= 1024,
     };
   },
   methods: {
+    toggleNav() {
+      this.navActive = !this.navActive;
+    },
     GoBodyText() {
       document.querySelector('#chapter2').scrollIntoView({ behavior: 'smooth'});
     },
@@ -68,19 +73,29 @@ export default {
         this.isActive = false;
       }
     },
+    
     scrollToSection(index) {
       const section = document.querySelector(`#chapter${index}`);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
       }
     },
+    handleNavItemClick(index) {
+      this.scrollToSection(index);
+      if (this.isMobile || this.navActive) {
+        this.navActive = false;
+      }
+    },
     handleScroll() {
       const currentScrollY = window.scrollY;
+      const navActiveCheck = document.querySelector('nav').classList.contains('active');
       if(currentScrollY === 0) {
         this.headerFix = false;
       } else if (currentScrollY > this.lastScrollY && currentScrollY > 0) {
         this.headerFix = false;
       } else if (currentScrollY < this.lastScrollY) {
+        this.headerFix = true;
+      } else if (navActiveCheck) {
         this.headerFix = true;
       }
       this.lastScrollY = currentScrollY;

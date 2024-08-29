@@ -27,10 +27,7 @@
                 <span v-for="(item, i) in skillIcon" :key="i">{{ item }}</span>
             </div>
         </div>
-        <div class="btn-area">
-          <a href="" class="btn-set-arr" target="_blank">경력기술서</a>
-          <router-link to="/styleGuide" class="btn-set-arr" target="_blank">스타일가이드</router-link>
-        </div>
+
       </div>
     </section>
     <!-- ABOUT ME // END -->

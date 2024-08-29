@@ -5,7 +5,7 @@
             <div class="m_copy">
                 <img src="https://deepdivdiv.github.io/pub/portfolio_2024/img/main_obj.svg" alt="">
                 <div class="m_text">
-                    <em>2 0 2 4</em>
+                    <span>안녕하세요! 꿈을 현실로 만드는 <b>웹 퍼블리셔 오영은</b> 입니다.</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 293.25 16.44" class="svg-txt">
                         <path class="m_logo_ts" d="M6.99,16.44c-1.19,0-2.23-.21-3.1-.64-.88-.43-1.6-.99-2.18-1.69-.58-.7-1.01-1.5-1.29-2.4-.28-.9-.42-1.82-.42-2.76s.14-1.86.42-2.77c.28-.91.71-1.71,1.29-2.42.58-.71,1.31-1.28,2.18-1.71.87-.43,1.91-.65,3.1-.65s2.23.22,3.1.65,1.6,1.01,2.18,1.71c.58.71,1.01,1.51,1.29,2.42s.42,1.83.42,2.77-.14,1.86-.42,2.76-.71,1.7-1.29,2.4c-.58.7-1.31,1.26-2.18,1.69-.88.43-1.91.64-3.1.64ZM3.64,8.93c0,.99.07,1.88.21,2.69s.35,1.49.63,2.06.63,1.01,1.05,1.32c.42.31.9.47,1.46.47s1.04-.16,1.46-.47c.42-.31.76-.75,1.04-1.32.28-.57.49-1.25.62-2.06s.21-1.7.21-2.69-.07-1.88-.21-2.69c-.14-.81-.35-1.49-.62-2.07-.28-.57-.62-1.01-1.04-1.33-.42-.31-.9-.47-1.46-.47s-1.04.16-1.46.47c-.42.31-.77.76-1.05,1.33s-.49,1.26-.63,2.07c-.14.81-.21,1.7-.21,2.69Z"/>
                         <path class="m_logo_ts" d="M19.16,13.52c0,.71-.16,1.26-.48,1.66-.32.39-.71.67-1.17.83-.46.16-.94.23-1.45.21-.51-.02-.95-.1-1.32-.22v-.29c.23-.01.4-.08.52-.19.11-.11.2-.25.24-.41.05-.16.07-.31.07-.46V3.35c0-.46-.07-.77-.21-.94-.14-.17-.33-.27-.57-.29v-.51h4.36v6.73h5.58V3.34c0-.46-.07-.77-.21-.94-.14-.17-.33-.26-.57-.29v-.51h4.36v11.91c0,.71-.16,1.26-.48,1.66s-.71.67-1.17.83c-.46.16-.94.23-1.45.21-.51-.02-.95-.1-1.32-.22v-.29c.23-.01.4-.08.52-.19s.2-.25.24-.41c.05-.16.07-.31.07-.46v-5.33h-5.58v4.2Z"/>
@@ -29,7 +29,12 @@
                         <path class="m_logo_ts" d="M277.5,13.52c0,.71-.16,1.26-.48,1.66-.32.39-.71.67-1.17.83-.46.16-.94.23-1.45.21-.51-.02-.95-.1-1.32-.22v-.29c.22-.01.38-.08.5-.19.11-.11.2-.25.24-.41.05-.16.08-.31.08-.46,0-.15,0-.26,0-.34V3.35c0-.46-.07-.77-.21-.94-.14-.17-.33-.27-.57-.29v-.51h4.36v11.91Z"/>
                         <path class="m_logo_ts" d="M286.26,16.44c-1.19,0-2.23-.21-3.1-.64-.88-.43-1.6-.99-2.18-1.69-.58-.7-1.01-1.5-1.29-2.4-.28-.9-.42-1.82-.42-2.76s.14-1.86.42-2.77c.28-.91.71-1.71,1.29-2.42.58-.71,1.31-1.28,2.18-1.71.87-.43,1.91-.65,3.1-.65s2.23.22,3.1.65,1.6,1.01,2.18,1.71c.58.71,1.01,1.51,1.29,2.42s.42,1.83.42,2.77-.14,1.86-.42,2.76-.71,1.7-1.29,2.4c-.58.7-1.31,1.26-2.18,1.69-.88.43-1.91.64-3.1.64ZM282.91,8.93c0,.99.07,1.88.21,2.69s.35,1.49.63,2.06.63,1.01,1.05,1.32c.42.31.9.47,1.46.47s1.04-.16,1.46-.47c.42-.31.76-.75,1.04-1.32.28-.57.49-1.25.62-2.06s.21-1.7.21-2.69-.07-1.88-.21-2.69c-.14-.81-.35-1.49-.62-2.07-.28-.57-.62-1.01-1.04-1.33-.42-.31-.9-.47-1.46-.47s-1.04.16-1.46.47c-.42.31-.77.76-1.05,1.33s-.49,1.26-.63,2.07c-.14.81-.21,1.7-.21,2.69Z"/>
                     </svg>
-                    <span>안녕하세요! 꿈을 현실로 만드는 <b>웹 퍼블리셔 오영은</b> 입니다.</span>
+                    <em>Every line of code is a step closer to perfection, driven by relentless dedication.</em>
+                    <div class="btn-area">
+                      <a href="https://mud-chess-378.notion.site/9cef14e6d8eb40adad740e02456e4b51?pvs=74" class="btn-set-arr" target="_blank">경력기술서</a>
+                      <a href="https://deepdivdiv.github.io/pub/portfolio_2024/StyleGuide.html" class="btn-set-arr" target="_blank">스타일가이드</a>
+                      <!-- <router-link to="/styleGuide" class="btn-set-arr" target="_blank">스타일가이드</router-link> -->
+                    </div>
                 </div>
             </div>
             <div class="scroll"><span></span></div>
@@ -56,13 +61,14 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
         onMounted(() => {
         const introText = gsap.timeline();
         introText
-            .fromTo('main canvas',{opacity:0, y: "-100%", duration: 1, delay: 1}, { opacity: 1, y: 0 })
+            .fromTo('main canvas',{opacity:0, y: "-100%", duration: 1, delay: 1}, { opacity: 1, y: "0" })
             .fromTo('.scroll',{opacity:0, duration: 0.5 }, { opacity: 1})
             .fromTo('.m_copy img',{opacity:0, x: -30, duration: 0.5,}, { opacity: 1, x: 0 })
-            .fromTo('.m_copy em',{opacity:0, duration:0.5, y:-30}, { opacity: 1, y: 0 })
+            .fromTo('.m_copy span',{opacity:0, duration:0.5, y:-30}, { opacity: 1, y: 0 })
             .fromTo('.svg-txt path',{opacity:0}, {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85})
             .fromTo('.svg-txt path',{fill:"none"}, {fill:"#fff"})
-            .fromTo('.m_copy span',{opacity:0, duration:0.5, y:-30}, { opacity: 1, y: 0 })
+            .fromTo('.m_copy em',{opacity:0, duration:0.5, y:-30}, { opacity: 1, y: 0 })
+            .fromTo('.m_copy .btn-area',{opacity:0, duration:0.2, y:10}, { opacity: 1, y: 0 })
             ;
             gsap.to(".scroll span", {
                 scrollTrigger: {
@@ -83,10 +89,10 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
             gsap.to("#waveCanvas", {
                 scrollTrigger: {
                 trigger: "#chapter1",
-                start: "top bottom",
+                start: "top 120%",
                 scrub: 0,
                 },
-                y: "17%", duration: 0.1,
+                y: "20%", duration: 0.1,
             });
         });
 
@@ -96,14 +102,14 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
       waves: [
         {
           points: [
-            { x: -600, amplitude: 10, yPercentage: 60 },
-            { x: 0, amplitude: 10, yPercentage: 45 },
-            { x: 400, amplitude: 10, yPercentage: 30 },
-            { x: 800, amplitude: 10, yPercentage: 40 },
-            { x: 1200, amplitude: 10, yPercentage: 27 },
-            { x: 1900, amplitude: 10, yPercentage: 55 },
-            { x: 3000, amplitude: 10, yPercentage: 20 },
-            { x: 4000, amplitude: 10, yPercentage: 100 },
+            { x: -600, amplitude: 10, yPercentage: 59 },
+            { x: 0, amplitude: 10, yPercentage: 44 },
+            { x: 400, amplitude: 10, yPercentage: 29 },
+            { x: 800, amplitude: 10, yPercentage: 39 },
+            { x: 1200, amplitude: 10, yPercentage: 26 },
+            { x: 1900, amplitude: 10, yPercentage: 54 },
+            { x: 3000, amplitude: 10, yPercentage: 19 },
+            { x: 4000, amplitude: 10, yPercentage: 99 },
             { x: window.innerWidth, amplitude: 0, yPercentage: 0 }
           ],
           color: '#7f6aeb',
@@ -114,14 +120,14 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
         },
         {
           points: [
-            { x: -600, amplitude: 10, yPercentage: 58 },
-            { x: 0, amplitude: 10, yPercentage: 43 },
-            { x: 400, amplitude: 10, yPercentage: 28 },
-            { x: 800, amplitude: 10, yPercentage: 38 },
-            { x: 1200, amplitude: 10, yPercentage: 25 },
-            { x: 1900, amplitude: 10, yPercentage: 53 },
-            { x: 3000, amplitude: 10, yPercentage: 18 },
-            { x: 4000, amplitude: 10, yPercentage: 98 },
+            { x: -600, amplitude: 10, yPercentage: 57 },
+            { x: 0, amplitude: 10, yPercentage: 42 },
+            { x: 400, amplitude: 10, yPercentage: 27 },
+            { x: 800, amplitude: 10, yPercentage: 37 },
+            { x: 1200, amplitude: 10, yPercentage: 24 },
+            { x: 1900, amplitude: 10, yPercentage: 52 },
+            { x: 3000, amplitude: 10, yPercentage: 17 },
+            { x: 4000, amplitude: 10, yPercentage: 97 },
             { x: window.innerWidth, amplitude: 0, yPercentage: 0 }
           ],
           color: '#7f6aeb',

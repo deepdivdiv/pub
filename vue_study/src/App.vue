@@ -1,5 +1,5 @@
 <template>
-
+  
   <div id="wrap">
     <routerView></routerView>
   </div>
@@ -10,6 +10,7 @@
 
 export default {
   name: 'App',
+  
 }
 
 </script>
