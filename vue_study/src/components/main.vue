@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main v-bind="$attrs">
         <h1 class="none">메인</h1>
         <div class="m_inner">
             <div class="m_copy">
@@ -43,8 +43,8 @@
   <script>
 
 import { gsap } from "gsap";
-import { onMounted } from 'vue';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { onMounted } from 'vue';
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 
@@ -54,10 +54,10 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
     name: "AppMain",
     setup() {
         onMounted(() => {
-        const introTextMo = gsap.timeline();
-        introTextMo
+        const introText = gsap.timeline();
+        introText
             .fromTo('main canvas',{opacity:0, y: "-100%", duration: 1, delay: 1}, { opacity: 1, y: 0 })
-            .fromTo('.scroll',{opacity:0, duration: 0.5, y:50}, { opacity: 1, y: 0 })
+            .fromTo('.scroll',{opacity:0, duration: 0.5 }, { opacity: 1})
             .fromTo('.m_copy img',{opacity:0, x: -30, duration: 0.5,}, { opacity: 1, x: 0 })
             .fromTo('.m_copy em',{opacity:0, duration:0.5, y:-30}, { opacity: 1, y: 0 })
             .fromTo('.svg-txt path',{opacity:0}, {opacity: 1, duration:0.5, strokeDashoffset:0, strokeDasharray:85})
@@ -67,18 +67,18 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
             gsap.to(".scroll span", {
                 scrollTrigger: {
                 trigger: "#chapter2",
-                start: "top center",
-                scrub: 1,
+                start: "top bottom",
+                scrub: 6,
                 },
                 rotate: 180, duration: 10,
                 });
             gsap.to(".scroll", {
                 scrollTrigger: {
                 trigger: "#chapter2",
-                start: "center bottom",
-                scrub: 5,
+                start: "top bottom",
+                scrub: 2,
                 },
-                y: "180%", duration: 0.1,
+                y: "120%",
             });
             gsap.to("#waveCanvas", {
                 scrollTrigger: {
@@ -86,7 +86,7 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
                 start: "top bottom",
                 scrub: 0,
                 },
-                y: "20%", duration: 0.1,
+                y: "17%", duration: 0.1,
             });
         });
 

@@ -14,7 +14,7 @@
     "sass-loader": "^10.5.2",
     "swiper": "^11.1.10",
     "vue": "^3.2.13",
-    "vue-router": "^4.4.3"
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

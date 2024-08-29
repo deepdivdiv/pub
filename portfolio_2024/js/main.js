@@ -201,35 +201,35 @@ const winMo = window.matchMedia("(max-width: 1024px)").matches;
     webSwiperWrap.before(webPrev);
     webSwiperWrap.after(webNext);
 
-  webSlidesData.forEach(data => {
-      const webSlide = document.createElement('div');
-      webSlide.className = 'swiper-slide';
-      webSlide.innerHTML = `
-          <div class="pj-thumb">
-              <img src="${data.imgSrc}" alt="${data.imgAlt}">
-          </div>
-          <div class="pj-info">
-              <div class="skill-label">
-                  ${data.skills.map(skill => `<em>${skill}</em>`).join('')}
-              </div>
-              <p>${data.title}</p>
-              <span>${data.description}</span>
-              <dl>
-                  <dt>기여도</dt>
-                  <dd>${data.contribution}</dd>
-                  <dt>작업범위</dt>
-                  <dd>${data.workScope}</dd>
-              </dl>
-              <div class="btn-area">
-                  <a class="btn-set-arr-w" href="${data.link}" target="_blank" title="새 창으로 열립니다.">LINK</a>
-                  <a class="btn-set-arr-w" href="${data.view}" target="_blank" title="새 창으로 열립니다.">VIEW</a>
-              </div>
-          </div>
-      `;
-  
-      webSwiperWrap.appendChild(webSlide);
+    webSlidesData.forEach(data => {
+        const webSlide = document.createElement('div');
+        webSlide.className = 'swiper-slide';
+        webSlide.innerHTML = `
+            <div class="pj-thumb">
+                <img src="${data.imgSrc}" alt="${data.imgAlt}">
+            </div>
+            <div class="pj-info">
+                <div class="skill-label">
+                    ${data.skills.map(skill => `<em>${skill}</em>`).join('')}
+                </div>
+                <p>${data.title}</p>
+                <span>${data.description}</span>
+                <dl>
+                    <dt>기여도</dt>
+                    <dd>${data.contribution}</dd>
+                    <dt>작업범위</dt>
+                    <dd>${data.workScope}</dd>
+                </dl>
+                <div class="btn-area">
+                    <a class="btn-set-arr-w" href="${data.link}" target="_blank" title="새 창으로 열립니다.">LINK</a>
+                    <a class="btn-set-arr-w" href="${data.view}" target="_blank" title="새 창으로 열립니다.">VIEW</a>
+                </div>
+            </div>
+        `;
+    
+        webSwiperWrap.appendChild(webSlide);
 
-  });
+    });
   designSlidesData.forEach(data => {
       const designSlide = document.createElement('div');
       designSlide.className = 'swiper-slide';

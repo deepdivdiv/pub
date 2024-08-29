@@ -1,5 +1,5 @@
 <template>
-        <section class="pj-publishing">
+        <section class="pj-publishing" v-bind="$attrs">
             <div class="sec_inner">
                 <div class="sec_tit">
                     <p class="t_dcr">저의 퍼블리싱 작업물을 소개합니다.</p>
@@ -9,11 +9,9 @@
                     <button class="pub-prev arr-set-prev"><i></i></button>
                     <swiper ref="swiperRef" v-bind="PubSlideOption" :modules="modules" class="pub-slide" @slideChange="onSlideChange">
                         <swiper-slide v-for="(item, i) in PubSlideData" :key="i">
-                            <div class="pj-thumb">
-                                <a :href="item.link" target="_blank" :tabindex="i === activeIndex ? 0 : -1">
+                            <a :href="item.link" target="_blank" :tabindex="i === activeIndex ? 0 : -1" class="pj-thumb">
                                     <img :src="item.imgSrc" :alt="item.imgAlt">
-                                </a>
-                            </div>
+                            </a>
                             <div class="pj-info">
                                 <div class="skill-label">
                                     <em v-for="(skill, i) in item.skills" :key="i">{{ skill }}</em>
@@ -36,6 +34,7 @@
                     <button class="pub-next arr-set-next"><i></i></button>
                 </div>
             </div>
+            <div class="pubBG"></div>
         </section>
         <!-- 디자인 영역 -->
         <section class="pj-design">
@@ -78,6 +77,11 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const fileRoot = "https://deepdiv.cafe24.com/2024Portfolio/img/projects/"
+import { gsap } from "gsap";
+import { onMounted } from "vue";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default{
     name: 'appProjectPub',
@@ -86,9 +90,51 @@ export default{
         SwiperSlide,
     },
     setup() {
+        onMounted(() =>{
+          const pj_pub_tl = gsap.timeline({
+          scrollTrigger: {
+          trigger: ".pj-publishing",
+          start: "0% 30%",
+          end: "80% 100%",
+          scrub: 1,
+          anticipatePin: 1,
+          },
+        });
+          const pj_web_tl = gsap.timeline({
+          scrollTrigger: {
+          trigger: ".pj-design",
+          start: "0% 30%",
+          end: "80% 100%",
+          scrub: 1,
+          anticipatePin: 1,
+          },
+        });
+
+        pj_pub_tl.fromTo(".pj-publishing .sec_tit p",
+        {opacity:0, x: -30}, { opacity: 1, x: 0,})
+        .fromTo(".pj-publishing .sec_tit h1",
+        {opacity:0, x: 30}, { opacity: 1, x: 0,}, "-=0.5")
+        .fromTo(".pj-publishing .pj-thumb",
+        {opacity:0, x: -30}, { opacity: 1, x: 0,})
+        .fromTo(".pj-publishing .pj-info",
+        {opacity:0, x: 30}, { opacity: 1, x: 0,}, "-=0.5")
+        ;
+        pj_web_tl.fromTo(".pj-design .sec_tit p",
+        {opacity:0, x: -30}, { opacity: 1, x: 0,})
+        .fromTo(".pj-design .sec_tit h1",
+        {opacity:0, x: 30}, { opacity: 1, x: 0,}, "-=0.5")
+        .fromTo(".pj-design .swiper-slide",
+        {opacity:0,}, { opacity: 1, }, "-=0.5")
+        .fromTo(".pj-design .btn-area",
+        {opacity:0, y:30}, { opacity: 1, y:0}, "-=0.5")
+        ;
+      });
+
         return {
             modules: [EffectFade, Navigation, Pagination],
         }
+        
+        
     },
     data(){
       return {
@@ -107,8 +153,8 @@ export default{
             loop: true, // 슬라이드 루프
         },
         DesignSlideOption: {
-            slidesPerView: 4.1, // slidesPerView로 수정
-            spaceBetween: 40,
+            slidesPerView: 1.2, // slidesPerView로 수정
+            spaceBetween: 20,
             centeredSlides: true,
             effect: 'horizontal', // fade 효과 설정
             fadeEffect: {
@@ -119,6 +165,23 @@ export default{
                 prevEl: '.design-prev',
             },
             loop: true, // 슬라이드 루프
+            breakpoints: {
+                560: {
+                slidesPerView: 1.2,
+                },
+                720: {
+                slidesPerView: 1.8,
+                },
+                1200: {
+                slidesPerView: 3.2,
+                },
+                1400: {
+                slidesPerView: 4.2,
+                spaceBetween: 40,
+                },
+            },
+      observer: true,	// 슬라이드 망가짐 방지
+      observeParents: true,	// 슬라이드 망가짐 방지
         },
         PubSlideData: [
             {
