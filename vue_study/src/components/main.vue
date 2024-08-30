@@ -3,7 +3,7 @@
         <h1 class="none">메인</h1>
         <div class="m_inner">
             <div class="m_copy">
-                <img src="https://deepdivdiv.github.io/pub/portfolio_2024/img/main_obj.svg" alt="">
+                <img src="@/assets/img/main_obj.svg" alt="">
                 <div class="m_text">
                     <span>안녕하세요! 꿈을 현실로 만드는 <b>웹 퍼블리셔 오영은</b> 입니다.</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 293.25 16.44" class="svg-txt">

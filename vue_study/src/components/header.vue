@@ -75,11 +75,17 @@ export default {
     },
     
     scrollToSection(index) {
-      const section = document.querySelector(`#chapter${index}`);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
+    const section = document.querySelector(`#chapter${index}`);
+    if (section) {
+      const offset = 80; // 오프셋 90px
+      const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({
+        top: sectionPosition,
+        behavior: 'smooth'
+      });
+    }
     },
+
     handleNavItemClick(index) {
       this.scrollToSection(index);
       if (this.isMobile || this.navActive) {

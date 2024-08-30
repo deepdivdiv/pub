@@ -1,7 +1,7 @@
 
 // 폰트선언
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap');
-$ft-location:"https://deepdivdiv.github.io/pub/portfolio_2024/font/";
+$ft-location:"@/assets/font/";
 @font-face {
     font-family: 'Pretendard';
     src: url('#{$ft-location}Pretendard-Light.eot');

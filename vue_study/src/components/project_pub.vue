@@ -35,6 +35,7 @@
                 </div>
             </div>
             <div class="pubBG"></div>
+            <div class="pubBG2"></div>
         </section>
         <!-- 디자인 영역 -->
         <section class="pj-design">
@@ -109,8 +110,25 @@ export default{
           anticipatePin: 1,
           },
         });
+        const pj_pub_bg = gsap.timeline({
+          scrollTrigger: {
+          trigger: ".pj-publishing",
+          start: "top center",
+          end: "center bottom",
+          scrub: 3,
+        //   anticipatePin: 90,
+          },
+        });
+        
 
-        pj_pub_tl.fromTo(".pj-publishing .sec_tit p",
+        pj_pub_bg
+        .fromTo(".pj-publishing .pubBG",
+        {opacity:0, width:0}, { opacity: 1, width:"100%",})
+        .fromTo(".pj-publishing .pubBG2",
+        {opacity:0, width:0}, { opacity: 1, width:"100%",})
+
+        pj_pub_tl
+        .fromTo(".pj-publishing .sec_tit p",
         {opacity:0, x: -30}, { opacity: 1, x: 0,})
         .fromTo(".pj-publishing .sec_tit h1",
         {opacity:0, x: 30}, { opacity: 1, x: 0,}, "-=0.5")
@@ -118,6 +136,11 @@ export default{
         {opacity:0, x: -30}, { opacity: 1, x: 0,})
         .fromTo(".pj-publishing .pj-info",
         {opacity:0, x: 30}, { opacity: 1, x: 0,}, "-=0.5")
+        .fromTo(".pj-publishing .pub-prev",
+        {opacity:0, x: -30}, { opacity: 1, x: 0,}, "-=0.5")
+        .fromTo(".pj-publishing .pub-next",
+        {opacity:0, x: 30}, { opacity: 1, x: 0,}, "-=0.5")
+
         ;
         pj_web_tl.fromTo(".pj-design .sec_tit p",
         {opacity:0, x: -30}, { opacity: 1, x: 0,})

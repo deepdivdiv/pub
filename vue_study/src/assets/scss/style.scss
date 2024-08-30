@@ -95,7 +95,7 @@ top: 0;
 z-index: 999999;
 }
 @keyframes pubBG { 
-  from { width: 0; }
+  from { width: 0px; }
   to { width: 100%; }
 }
 
@@ -517,7 +517,7 @@ z-index: 999999;
   // project.vue
   .pj {
     &-publishing {
-      background: $color-main;
+      // background: $color-main;
       position: relative;
       z-index: 2;
       .sec_tit {
@@ -621,10 +621,15 @@ z-index: 999999;
         height: 100%;
         position: absolute;
         left: 0; top: 0;
-        background: rgba($color-main-d, 0.3);
-        animation: pubBG auto ease-in-out forwards;
-        animation-timeline: view();
-        animation-range: entry 0% cover 40%;
+        background: rgba($color-main, 0.5);
+        z-index: -1;
+      }
+      .pubBG2 {
+        width: 0%;
+        height: 100%;
+        position: absolute;
+        right: 0; top: 0;
+        background: rgba($color-main, 1);
         z-index: -1;
       }
     }
@@ -863,9 +868,22 @@ body.dark {
       }
     }
     .pj-publishing {
-      background: rgba($color-main, 0.2);
+      
       .pubBG {
         background: rgba($color-main, 0.3);
+      }
+      .pubBG2 {
+        background: rgba($color-main, 0.3);
+      }
+    }
+    .pj-design {
+      .pj-info {
+        p {
+          color: #fff;
+        }
+        span {
+          color: #ffffff60;
+        }
       }
     }
     footer {
@@ -950,7 +968,7 @@ body.dark {
         align-items: center;
         justify-content: center;
         text-align: center;
-        span { word-break: keep-all; text-wrap: balance;}
+        span { word-break: keep-all; text-wrap: balance; line-height: 1.3;}
         .btn-area {
           justify-content: center;
         }
@@ -969,19 +987,31 @@ body.dark {
 @media (width <= 768px) {
   #wrap {
     .sec_tit {
-      @include secTitle($st-fz:4rem)
+      @include secTitle($st-fz:4rem);
+      .r_dcr { display: none !important; }
     }
     .sec_area {
       margin-top: 3rem;
+      p span { line-height: 1.4;}
+      p span:not(:last-child) { margin-bottom: 0; }
     }
     .pj-publishing, footer {
       .sec_tit {
         @include secTitle($st-fz:4rem, $st-col: #fff, $su-col: #fff)
       }
     }
+    header {
+      padding: 1rem 2rem;
+      .logo {
+        background: svg-icon(logo-symbol, $color-main-svg) no-repeat 0 0;
+        height: 30px;
+        width: 30px;
+      }
+    }
     main {
       .scroll {
-        display: none;
+        right: 2rem;
+        bottom: 20vw;
       }
     }
     .pj-design {
@@ -989,27 +1019,10 @@ body.dark {
         min-height: unset;
       }
     }
-    footer {
-      padding: 4rem 0;
-      .sec_tit p {
-        line-height: 1.3;
-        text-wrap: balance;
-        word-break: keep-all;
-        margin-top: 1rem;
-      }
-      address {
-        flex-direction: column;
-        gap: 1rem;
-        p {
-          span {
-            line-height: 2.5;
-          }
-        }
-      }
-    }
+
     article {
       section {
-        padding: 5rem 4rem;
+        padding: 5rem 2rem;
       }
     }
     .skill_stack {
@@ -1035,6 +1048,24 @@ body.dark {
             }
         }
     }
+    }
+    footer {
+      padding: 4rem 0;
+      .sec_tit p {
+        line-height: 1.3;
+        text-wrap: balance;
+        word-break: keep-all;
+        margin-top: 1rem;
+      }
+      address {
+        flex-direction: column;
+        gap: 1rem;
+        p {
+          span {
+            line-height: 2.5;
+          }
+        }
+      }
     }
   }
 }

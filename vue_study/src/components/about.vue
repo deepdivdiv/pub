@@ -47,9 +47,9 @@ export default{
           const about_tl = gsap.timeline({
           scrollTrigger: {
           trigger: "#chapter2",
-          start: "40% 80%",
-          end: "80% 100%",
-          scrub: 10,
+          start: "center bottom",
+          end: "bottom bottom",
+          scrub: 5,
           anticipatePin: 1,
           },
         });
