@@ -53,26 +53,15 @@ export default{
           anticipatePin: 1,
           },
         });
-        about_tl.fromTo("#chapter2 .sec_tit",
-        {opacity:0, x: -30}, { opacity: 1, x: 0,})
-        .fromTo(".about_me h2",
-        {opacity:0, x:-30},{ opacity:1, x:0},)
-        .fromTo(".about_me span", {opacity:0, x:-30, }, {
-          opacity:1, x:0, stagger:0.1
-        })
-        .fromTo(".about_career h2",
-        {opacity:0, x:-30},{ opacity:1, x:0},)
-        .fromTo(".about_career span", {opacity:0, x:-30, }, {
-          opacity:1, x:0, stagger:0.1
-        })
-        .fromTo(".skill_stack h2",
-        {opacity:0, x:-30},{ opacity:1, x:0})
-        .fromTo("#chapter2 .profile-thumb", {scale:0.8, opacity:0, rotate:20}, {
-          scale: 1, opacity: 1, rotate: 0,
-        })
-        .fromTo(".skill_stack span", {opacity:0, y:30, }, {
-          opacity:1, y:0, stagger:0.1
-        })
+        about_tl
+        .fromTo("#chapter2 .sec_tit", {opacity:0, x: -30}, { opacity: 1, x: 0,})
+        .fromTo(".about_me h2", {opacity:0, x:-30},{ opacity:1, x:0},)
+        .fromTo(".about_me span", {opacity:0, x:-30, }, { opacity:1, x:0, stagger:0.1})
+        .fromTo("#chapter2 .profile-thumb", {scale:0.8, opacity:0, rotate:20}, {scale: 1, opacity: 1, rotate: 0,})
+        .fromTo(".about_career h2", {opacity:0, x:-30},{ opacity:1, x:0},)
+        .fromTo(".about_career span", {opacity:0, x:-30, }, {opacity:1, x:0, stagger:0.1})
+        .fromTo(".skill_stack h2", {opacity:0, x:-30},{ opacity:1, x:0})
+        .fromTo(".skill_stack span", {opacity:0, y:30, }, {opacity:1, y:0, stagger:0.1})
         ;
       });
 

@@ -32,7 +32,7 @@
                     <em>Every line of code is a step closer to perfection, driven by relentless dedication.</em>
                     <div class="btn-area">
                       <a href="https://mud-chess-378.notion.site/9cef14e6d8eb40adad740e02456e4b51?pvs=74" class="btn-set-arr" target="_blank">경력기술서</a>
-                      <a href="https://deepdivdiv.github.io/pub/portfolio_2024/StyleGuide.html" class="btn-set-arr" target="_blank">스타일가이드</a>
+                      <!-- <a href="https://deepdivdiv.github.io/pub/portfolio_2024/StyleGuide.html" class="btn-set-arr" target="_blank">스타일가이드</a> -->
                       <!-- <router-link to="/styleGuide" class="btn-set-arr" target="_blank">스타일가이드</router-link> -->
                     </div>
                 </div>

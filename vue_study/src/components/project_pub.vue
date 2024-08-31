@@ -140,7 +140,6 @@ export default{
         {opacity:0, x: -30}, { opacity: 1, x: 0,}, "-=0.5")
         .fromTo(".pj-publishing .pub-next",
         {opacity:0, x: 30}, { opacity: 1, x: 0,}, "-=0.5")
-
         ;
         pj_web_tl.fromTo(".pj-design .sec_tit p",
         {opacity:0, x: -30}, { opacity: 1, x: 0,})
@@ -207,12 +206,12 @@ export default{
             {
                 imgSrc: fileRoot + "2024_oye.png", // 이미지 경로
                 imgAlt: "2024 오영은 포트폴리오 메인 이미지", // ALT값
-                skills: ["HTML5", "SCSS", "CSS3", "JAVASCRIPT", "JQUERY", "GIT", "GSAP"], // 스킬
+                skills: ["HTML5", "SCSS", "CSS3", "JAVASCRIPT", "VUE3", "GIT", "GSAP"], // 스킬
                 title: "2024 오영은 포트폴리오", // 제목
-                description: "2024년 포트폴리오 시안을 작업하고 퍼블리싱하였습니다. 인터랙티브 효과는 GSAP 모션 라이브러리를 주로 사용하여 구현하였으며, 메인 영역에서는 SVG를 활용해 텍스트 애니메이션에 중점을 두었습니다. 배경은 캔버스를 이용해 물결 애니메이션을 추가하였으며, 슬라이드 영역에는 Swiper 라이브러리 사용하였습니다. 데이터는 배열스크립트로 구현하여 동적으로 호출하였습니다", // 설명
+                description: "2024년 포트폴리오 시안을 작업하고 퍼블리싱하였습니다. 프레임워크 Vue3을 사용하였으며, 인터랙티브 효과는 GSAP 모션 라이브러리를 주로 사용하여 구현하였으며, 메인 영역에서는 SVG를 활용해 텍스트 애니메이션에 중점을 두었습니다. 배경은 캔버스를 이용해 물결 애니메이션을 추가하였으며, 슬라이드 영역에는 Swiper 라이브러리 사용하였습니다. 데이터는 배열스크립트로 구현하여 동적으로 호출하였습니다", // 설명
                 contribution: "100%", // 기여도 퍼센트
                 workScope: "전체", // 작업영역
-                link: "https://deepdivdiv.github.io/pub/portfolio_2024/index.html", // 링크
+                link: "https://deepdivdiv.github.io/pub/portfolio_2024_vue/", // 링크
                 view: "https://mud-chess-378.notion.site/2024-a606c7d2830349fa8d3a8d1ccc4890e7", // 뷰페이지(노션)
             },
             {
